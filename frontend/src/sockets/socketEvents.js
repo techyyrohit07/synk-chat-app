@@ -1,7 +1,7 @@
 
 
 
-export const registerSocketListeners = (socket, activeChatRef, setMessages) => {
+export const registerSocketListeners = (socket, activeChatRef, onNewMessage) => {
     socket.on("receiveMessage", (message) => {
        
         console.log("Incoming messages from socket : ", message);
@@ -19,7 +19,7 @@ export const registerSocketListeners = (socket, activeChatRef, setMessages) => {
           }
           
           console.log("Adding message to chat:", formattedMessage);  
-          setMessages((prev) => [...prev, formattedMessage])
+          onNewMessage(formattedMessage)
         }else{
             console.log("Messages not available for active chat");
             
