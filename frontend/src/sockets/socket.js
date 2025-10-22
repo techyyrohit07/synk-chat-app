@@ -9,6 +9,13 @@ export const socket = io("http://localhost:5000", {
 
 export const joinUser = (userId) => {
     if(!socket.connected) socket.connect()
+    
+    socket.on("connect", () => {
+        console.log("Connected to socket server:", socket.id);
+    })
+
+    console.log("Socket connected");
+    
     socket.emit("join", userId)
 }
 
