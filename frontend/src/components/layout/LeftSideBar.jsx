@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux";
 
 
 const LeftSideBar = ({chats, onSelectChat}) => {
 
-  const user = JSON.parse(localStorage.getItem('user') || '{}')
+  const user = useSelector((state) => state.user)
 
   return (
     <div className="p-4 overflow-y-auto h-full space-y-2">

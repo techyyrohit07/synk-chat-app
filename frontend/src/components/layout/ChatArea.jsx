@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 
 const ChatArea = ({activeChat , messages, onSendMessage}) => {
 
@@ -8,7 +9,7 @@ const ChatArea = ({activeChat , messages, onSendMessage}) => {
     </div>
   }
 
-  const user = JSON.parse(localStorage.getItem('user') || '{}')
+  const user = useSelector(state => state.user)
   const currentUserId = user._id
 
   function handleSubmit(e){
