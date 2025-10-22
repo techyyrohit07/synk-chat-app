@@ -1,6 +1,8 @@
 import {useForm} from 'react-hook-form'
 import { loginUser } from '../services/authService'
 import { useNavigate } from 'react-router-dom'
+import { setUser } from '../store/slices/userSlice'
+import { useDispatch } from 'react-redux'
 
 const LoginForm = () => {
 
@@ -12,11 +14,12 @@ const LoginForm = () => {
         formState : {errors}
     } = useForm()
 
+    const dispatch = useDispatch()
+
     const onSubmit = async (data) => {
         const response = await loginUser(data)
         alert(response.message)
-        localStorage.clear()
-        localStorage.setItem("user", JSON.stringify(response.user))
+        dispatch(setUser(response.user))
         // localStorage.setItem("userId", JSON.stringify(response.user._id))
         // localStorage.setItem("username", JSON.stringify(response.user.username))
         // localStorage.setItem("email", JSON.stringify(response.user.email))
