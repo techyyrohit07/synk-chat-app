@@ -10,6 +10,6 @@ const server = http.createServer(app)
 initializeSocketConnection(server)
 
 server.listen(PORT,()=>{
-    console.log("Server started ");
+    console.log("Server started on PORT : ", PORT);
     
 })
