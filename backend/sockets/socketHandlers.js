@@ -6,6 +6,8 @@ export const registerSocketHandlers = (io, socket, onlineUsers) => {
     socket.on("join", (userId)=> {
         onlineUsers.set(userId, socket.id)
         console.log(`User ${userId} joined`);
+        console.log("Online users : ", onlineUsers);
+        
         
     })
 
