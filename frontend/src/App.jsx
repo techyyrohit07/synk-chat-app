@@ -17,6 +17,9 @@ function App() {
   }
   const isAuthenticated = !!user && typeof user === 'object' && user._id;
 
+  console.log("Parsed user:", user);
+  console.log("isAuthenticated:", isAuthenticated);
+
     return (
       <div className="min-h-screen bg-[radial-gradient(ellipse_at_top,_#1E3A8A,_#0F172A,_#000)] text-white antialiased">
         <Routes>
