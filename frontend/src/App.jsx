@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 
 function App() {
 
-  const userState = useSelector((state) => state.user);
-  let user = userState?.user;
+  const user = useSelector((state) => state.user);
+  
   if (typeof user === 'string') {
     try {
       user = JSON.parse(user);
