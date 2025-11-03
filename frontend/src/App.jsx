@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function App() {
 
-  const user = useSelector((state) => state.user);
+  let user = useSelector((state) => state.user);
   
   if (typeof user === 'string') {
     try {

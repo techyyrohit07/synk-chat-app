@@ -19,9 +19,6 @@ export const socket = io(import.meta.env.VITE_SOCKET_URL, {
 //     socket.emit("join", userId)
 // }
 
-// export const sendSocketMessage = (messageData) => {
-//     socket.emit("sendMessage", messageData)
-// }
 
 export const joinUser = (userId) => {
   if (!userId) {
@@ -42,3 +39,7 @@ export const joinUser = (userId) => {
     console.log("Emitted join with:", userId);
   }
 };
+
+export const sendSocketMessage = (messageData) => {
+    socket.emit("sendMessage", messageData)
+}
